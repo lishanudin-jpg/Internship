@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>TaskFlow | To-Do App</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <main class="app-container">
+
+        <!-- =====================================
+             HEADER
+        ====================================== -->
+
+        <header class="app-header">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    ✓
+                </div>
+
+                <div>
+                    <h1>TaskFlow</h1>
+
+                    <p>
+                        Organize your day, one task at a time.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="date-display" id="dateDisplay"></div>
+
+        </header>
+
+
+        <!-- =====================================
+             ADD TASK
+        ====================================== -->
+
+        <section class="add-task-section">
+
+            <form id="taskForm">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What needs to be done?"
+                    autocomplete="off"
+                    maxlength="150"
+                >
+
+                <button
+                    type="submit"
+                    id="addTaskButton"
+                >
+                    <span>+</span>
+                    Add Task
+                </button>
+
+            </form>
+
+            <p
+                id="inputError"
+                class="input-error"
+            ></p>
+
+        </section>
+
+
+        <!-- =====================================
+             TASK SUMMARY
+        ====================================== -->
+
+        <section class="summary">
+
+            <div class="summary-card">
+
+                <span class="summary-icon pending-icon">
+                    ○
+                </span>
+
+                <div>
+                    <span class="summary-label">
+                        Pending
+                    </span>
+
+                    <strong id="totalPending">
+                        0
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span class="summary-icon completed-icon">
+                    ✓
+                </span>
+
+                <div>
+                    <span class="summary-label">
+                        Completed
+                    </span>
+
+                    <strong id="totalCompleted">
+                        0
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span class="summary-icon total-icon">
+                    #
+                </span>
+
+                <div>
+                    <span class="summary-label">
+                        Total Tasks
+                    </span>
+
+                    <strong id="totalTasks">
+                        0
+                    </strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             TASK LISTS
+        ====================================== -->
+
+        <section class="task-lists">
+
+
+            <!-- =================================
+                 PENDING TASKS
+            ================================== -->
+
+            <div class="task-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            WORK IN PROGRESS
+                        </span>
+
+                        <h2>
+                            Pending Tasks
+                        </h2>
+
+                    </div>
+
+                    <span
+                        class="task-count pending-count"
+                        id="pendingCount"
+                    >
+                        0 pending
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="pendingTasks"
+                    class="task-list"
+                >
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 COMPLETED TASKS
+            ================================== -->
+
+            <div class="task-section completed-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            DONE
+                        </span>
+
+                        <h2>
+                            Completed Tasks
+                        </h2>
+
+                    </div>
+
+                    <span
+                        class="task-count completed-count"
+                        id="completedCount"
+                    >
+                        0 completed
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="completedTasks"
+                    class="task-list"
+                >
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
+
+        <footer>
+
+            <p>
+                TaskFlow • Level 2 • Task 3
+            </p>
+
+            <span>
+                Your tasks are automatically saved.
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

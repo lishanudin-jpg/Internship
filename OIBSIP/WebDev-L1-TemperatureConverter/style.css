@@ -1,0 +1,491 @@
+/* =========================================
+   GLOBAL STYLES
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at top left, #dbeafe, transparent 35%),
+        radial-gradient(circle at bottom right, #e0e7ff, transparent 35%),
+        #f8fafc;
+
+    color: #172033;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+    width: 100%;
+    max-width: 850px;
+}
+
+
+/* =========================================
+   CONVERTER CARD
+========================================= */
+
+.converter-card {
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 28px;
+
+    padding: 45px;
+
+    box-shadow:
+        0 25px 60px rgba(15, 23, 42, 0.12);
+
+    backdrop-filter: blur(15px);
+
+    animation: cardAppear 0.7s ease;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.thermometer-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+
+    border-radius: 20px;
+
+    font-size: 34px;
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
+}
+
+.header h1 {
+    font-size: 36px;
+    font-weight: 800;
+
+    margin-bottom: 12px;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header p {
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.converter-form {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+
+    font-weight: 700;
+
+    margin-bottom: 9px;
+
+    color: #334155;
+}
+
+input,
+select {
+    width: 100%;
+
+    padding: 15px 16px;
+
+    border: 2px solid #e2e8f0;
+
+    border-radius: 13px;
+
+    background: #f8fafc;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    color: #172033;
+
+    outline: none;
+
+    transition: 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #3b82f6;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.input-hint {
+    margin-top: 7px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+#convertBtn {
+    grid-column: 1 / -1;
+
+    border: none;
+
+    padding: 16px;
+
+    border-radius: 13px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+#convertBtn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(37, 99, 235, 0.3);
+}
+
+#convertBtn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.error-message {
+    grid-column: 1 / -1;
+
+    min-height: 20px;
+
+    text-align: center;
+
+    color: #dc2626;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   RESULTS
+========================================= */
+
+.results {
+    margin-top: 10px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+}
+
+.results h2,
+.formula-section h2 {
+    text-align: center;
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+
+    color: #1e293b;
+}
+
+.result-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.result-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 18px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    transition: 0.3s ease;
+}
+
+.result-box:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.result-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 20px;
+
+    font-weight: 800;
+}
+
+.result-box p {
+    font-size: 12px;
+
+    color: #64748b;
+
+    margin-bottom: 4px;
+}
+
+.result-box h3 {
+    font-size: 17px;
+
+    color: #172033;
+}
+
+
+/* =========================================
+   FORMULAS
+========================================= */
+
+.formula-section {
+    margin-top: 30px;
+}
+
+.formula-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.formula {
+    padding: 15px;
+
+    text-align: center;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+}
+
+.formula strong {
+    display: block;
+
+    font-size: 13px;
+
+    color: #2563eb;
+
+    margin-bottom: 7px;
+}
+
+.formula span {
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+footer p {
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .converter-card {
+        padding: 25px 20px;
+
+        border-radius: 22px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .converter-form {
+        grid-template-columns: 1fr;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .formula-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #convertBtn {
+        grid-column: auto;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header p {
+        font-size: 13px;
+    }
+
+    .results {
+        padding: 18px;
+    }
+
+    .result-box {
+        padding: 14px;
+    }
+}

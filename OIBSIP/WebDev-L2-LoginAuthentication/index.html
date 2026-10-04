@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SecureAuth | Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <section class="auth-card">
+
+            <div class="brand">
+                <div class="brand-icon">S</div>
+
+                <div>
+                    <h1>SecureAuth</h1>
+                    <p>Welcome back</p>
+                </div>
+            </div>
+
+            <div class="form-heading">
+                <h2>Sign in</h2>
+
+                <p>
+                    Enter your credentials to access your dashboard.
+                </p>
+            </div>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="loginIdentifier">
+                        Username or Email
+                    </label>
+
+                    <input
+                        type="text"
+                        id="loginIdentifier"
+                        placeholder="Enter username or email"
+                        autocomplete="username"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            data-target="loginPassword"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <p
+                    id="loginError"
+                    class="message error"
+                ></p>
+
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Login
+                </button>
+
+            </form>
+
+
+            <div class="switch-page">
+
+                <p>
+                    Don't have an account?
+                    <a href="register.html">
+                        Create an account
+                    </a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
